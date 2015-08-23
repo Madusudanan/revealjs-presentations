@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">            
+				<section>
+					<h1>Intro to the Scala REPL</h1>
+				</section>
+				<section>
+					<p>
+                        <ul>
+                            <li>If you are familiar with python development then the Scala REPL is somewhat similar to the Python Shell, but for Scala.</li>
+                            <li>This will be confusing at first, since scala is a compiled language and you might be wondering how can an interpreter exist.</li>
+                            <li>Technically REPL stands for Read Eval Print Loop.</li>
+                            <li>Whatever code that you type in is compiled and run on the fly.</li>
+                            <li>First it reads the code, then evaluates it, then prints if there any output statements and then this is looped till we exit the shell.Hence the name REPL.</li>
+                        </ul>
+					</p>
+				</section>
+                <section>
+                    <p>
+                        If you have installed the REPL correctly, then if you type scala in your console/terminal, then your screen should be something similar to below
+                    </p>
+                    <img src="images/Screenshot_REPL.png" alt="Scala REPL"/>
+                    <p>There are two details to make note of.</p>
+                    <ul>
+                        <li>The Scala version</li>
+                        <li>The JDK/JVM it is running on top of</li>
+                    </ul>
+                    <p>Just to remind that scala runs on top of the JVM</p>
+                </section>
+                <section>
+                    <p>Entering and exiting the REPL</p>
+                    <p>As in the previous example, you can enter into the shell by typing in Scala and exit out of them by typing in :quit</p>
+                    <img src="images/Screenshot_REPL_Enter_Exit.png"/>
+                    <p>Type in :help which brings up lot of help options.Over the time we can achieve mastery, until then :help can be our Jarvis Co-pilot</p>
+                </section>
+                <section>
+                <p>Ok, let's start with some simple examples.</p>
+                <p><u>Basic Calculator expressions</u></p>
+                <img src="images/Screenshot_REPL_Expressions.png"/>    
+                <p>Note down two things, res0-4 and there is an Int besides it, which we will discuss in the following slides.</p>
+                </section>
+                <section>
+                    <li>All the evaluation results are stored in variables named as res 0- till required.These are auto assigned names and live throughout the session of the shell in memory.Besides these we                                   can also store our own.</li>
+                    <li>Notice that we did not mention any types in our expression and it automatically got inferred as Integers(Int).This is something called type inference which we will be discussing later.</li>
+                    <img src="images/Screenshot_REPL_Variable_Sessions.png"/>
+                </section>
+                <section>
+                    <center><p>Final Thoughts</p></center>
+                    <p>Hopefully that should get you started with the REPL.We will continue to explore Scala through the REPL as well as use Intellij.</p>
+                    <p>The REPL is particularly handy to write some quick code to test out scala logic.The error messages are also quite helpful.Now with armed with this tool, let's start to explore the world of Scala.                       </p>
+                </section>			
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
